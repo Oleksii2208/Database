@@ -1,14 +1,70 @@
 {
   "cars": [
     {
-      "model": "Tesla S",
-      "price": 50250,
-      "id": "QanMUlXG8kQ"
+      "model": "Dacia Logan",
+      "year": 2007,
+      "id": "fghq6YYOZag",
+      "owner": "Oleksii"
     },
     {
-      "model": "Dacia Logan",
-      "price": 4100,
-      "id": "fghq6YYOZag"
+      "model": "Lanos",
+      "year": 2007,
+      "id": "JknJ0acBVmk"
+    },
+    {
+      "model": "Ford C-Max",
+      "year": 2004,
+      "id": "9XfwZaFZxzA"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "k48Smd7GLy4"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "9fzDZZcEJE4"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "b0N4M6tWeVY"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "3iFEAoG_Cos"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "OoyvYzmjYjQ"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "uXlLhbECd40"
+    },
+    {
+      "model": "Accent",
+      "year": 2007,
+      "id": "5kEUmwvdNmU"
+    },
+    {
+      "model": "Vaz-2101",
+      "year": 1985,
+      "id": "VfdleAIREZY"
+    },
+    {
+      "model": "Vaz-2101",
+      "year": 1985,
+      "id": "BlXBKMR2VoQ"
+    },
+    {
+      "model": "Vaz-2101",
+      "year": 1986,
+      "id": "qCMJfylCE3c"
     }
   ],
   "posts": [
