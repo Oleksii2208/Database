@@ -43,26 +43,26 @@
       <form class="card form-inline search-form js-update-form">
         <div class="form-group">Id: <input type="text" name="carId" /></div>
         <div class="form-group">
-          Model: <input type="text" name="bookTitle" />
+          Model: <input type="text" name="carModel" />
         </div>
         <div class="form-group">
-          Year: <input type="text" name="bookAuthor" />
+          Year: <input type="text" name="carYear" />
         </div>
         <div class="form-group">
-          Owner: <input type="text" name="bookDesc" />
+          Owner: <input type="text" name="carOwner" />
         </div>
 
         <button type="submit" class="btn btn-primary">Update Car</button>
       </form>
 
       <form class="card form-inline search-form js-delete-form">
-        <div class="form-group">Id: <input type="text" name="bookId" /></div>
+        <div class="form-group">Id: <input type="text" name="carId" /></div>
 
         <button type="submit" class="btn btn-primary">Delete Car</button>
       </form>
     <ul class="cars-list" data-id=${id}>
       <li>
-
+        <p>id: {id}</p>
         <p>Model: ${model}</p>
         <p>Year: ${year}</p>
       </li>

@@ -1,7 +1,27 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import { createCar, getAllCars, resetCar, updateCar } from './js/carsAPI';
+import {
+  createCar,
+  deleteCar,
+  getAllCars,
+  resetCar,
+  updateCar,
+} from './js/carsAPI';
+
+iziToast.settings({
+  timeout: 10000,
+  resetOnHover: true,
+  icon: 'material-icons',
+  transitionIn: 'flipInX',
+  transitionOut: 'flipOutX',
+  onOpening: function () {
+    console.log('callback abriu!');
+  },
+  onClosing: function () {
+    console.log('callback fechou!');
+  },
+});
 
 const refs = {
   createFormElem: document.querySelector('.js-create-form'),
@@ -15,6 +35,8 @@ refs.createFormElem.addEventListener('submit', handleCreateCar);
 refs.updateFormElem.addEventListener('submit', handleUpdateCar);
 refs.resetFormElem.addEventListener('submit', handleResetCar);
 refs.removeFormElem.addEventListener('submit', handleRemoveCar);
+
+// -----------------------------------------------------------------------
 
 function handleCreateCar(e) {
   e.preventDefault();
@@ -34,6 +56,9 @@ function handleCreateCar(e) {
 
   e.target.reset();
 }
+
+// -----------------------------------------------------------------------
+
 function handleUpdateCar(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
@@ -65,6 +90,9 @@ function handleUpdateCar(e) {
 
   e.target.reset();
 }
+
+// -----------------------------------------------------------------------
+
 function handleResetCar(e) {
   e.preventDefault();
 
@@ -94,16 +122,39 @@ function handleResetCar(e) {
   e.target.reset();
 }
 
+// -----------------------------------------------------------------------
+
 function handleRemoveCar(e) {
   e.preventDefault();
+  const id = e.target.elements.carId.value;
+
+  if (!id) return;
+
+  deleteCar(id)
+    .then(() => {
+      const oldCar = document.querySelector(`[data-id='${id}']`);
+      if (oldCar) {
+        oldCar.remove();
+      }
+    })
+    .catch(error => {
+      iziToast.error({
+        title: 'Error',
+        message: 'Illegal operation',
+      });
+    });
 
   e.target.reset();
 }
+
+// -----------------------------------------------------------------------
 
 getAllCars().then(data => {
   const markup = carsTemplate(data);
   refs.carListElem.innerHTML = markup;
 });
+
+// -----------------------------------------------------------------------
 
 function carTemplate(car) {
   const { model, year, owner, id } = car;

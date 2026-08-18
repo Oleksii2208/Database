@@ -1,120 +1,22 @@
 {
   "cars": [
     {
-      "model": "5",
-      "year": "5",
-      "owner": "5",
-      "id": "fghq6YYOZag",
-      "ktitle": "3",
-      "kauthor": "6"
-    },
-    {
       "model": "Lanos",
       "year": 2007,
-      "id": "JknJ0acBVmk"
+      "id": "JknJ0acBVmk",
+      "owner": "Oleg"
     },
     {
       "model": "Ford C-Max",
       "year": 2004,
-      "id": "9XfwZaFZxzA"
+      "id": "9XfwZaFZxzA",
+      "owner": "Kirillo"
     },
     {
-      "model": "Accent",
-      "year": 2007,
-      "id": "k48Smd7GLy4"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "9fzDZZcEJE4"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "b0N4M6tWeVY"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "3iFEAoG_Cos"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "OoyvYzmjYjQ"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "uXlLhbECd40"
-    },
-    {
-      "model": "Accent",
-      "year": 2007,
-      "id": "5kEUmwvdNmU"
-    },
-    {
-      "model": "Vaz-2101",
-      "year": 1985,
-      "id": "VfdleAIREZY"
-    },
-    {
-      "model": "Vaz-2101",
-      "year": 1985,
-      "id": "BlXBKMR2VoQ"
-    },
-    {
-      "model": "Vaz-2101",
-      "year": 1986,
-      "id": "qCMJfylCE3c"
-    },
-    {
-      "ktitle": "gege",
-      "kauthor": "gegeg",
-      "kdesc": "ege",
-      "id": "rTqnEtEkZDM"
-    },
-    {
-      "ktitle": "hrh",
-      "kauthor": "5566",
-      "kdesc": "gft",
-      "id": "Aw6UYpQPyGg"
-    },
-    {
-      "ktitle": "kyky",
-      "kauthor": "kyuk",
-      "kdesc": "lulu",
-      "id": "t4TseI-lYW0"
-    },
-    {
-      "model": "rgergr",
-      "year": "gerger",
-      "owner": "gerge",
-      "id": "TsjS1BjzWEU"
-    },
-    {
-      "model": "try",
+      "model": "Dacia Logan",
       "year": "2007",
-      "owner": "k;;",
-      "id": "8KR7kb-bD7M"
-    },
-    {
-      "model": "hlli",
-      "year": "hlhlh",
-      "owner": "lhil",
-      "id": "4qDttygfI5E"
-    },
-    {
-      "model": "fn",
-      "year": "fnmf",
-      "owner": "nfn",
-      "id": "6UiCNsj1OTQ"
-    },
-    {
-      "model": "1",
-      "year": "22",
-      "owner": "22",
-      "id": "d8BP1WjWC1A"
+      "owner": "Oleksii",
+      "id": "ll0fYjWap6U"
     }
   ],
   "posts": [
