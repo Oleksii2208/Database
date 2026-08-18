@@ -1,8 +1,104 @@
-import { getAllCars } from './js/carsAPI';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import { createCar, getAllCars, resetCar, updateCar } from './js/carsAPI';
 
 const refs = {
+  createFormElem: document.querySelector('.js-create-form'),
+  updateFormElem: document.querySelector('.js-update-form'),
+  resetFormElem: document.querySelector('.js-reset-form'),
+  removeFormElem: document.querySelector('.js-delete-form'),
   carListElem: document.querySelector('.cars-list'),
 };
+
+refs.createFormElem.addEventListener('submit', handleCreateCar);
+refs.updateFormElem.addEventListener('submit', handleUpdateCar);
+refs.resetFormElem.addEventListener('submit', handleResetCar);
+refs.removeFormElem.addEventListener('submit', handleRemoveCar);
+
+function handleCreateCar(e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  // const data = Object.fromEntries(formData.entries()); // Можна зібрати так дані з форми, але так не назви будуть з форми нейм, тому:
+
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+    const newKey = key.slice(3).toLowerCase();
+    data[newKey] = value;
+  }
+
+  createCar(data).then(newCar => {
+    const markup = carTemplate(newCar);
+    refs.carListElem.insertAdjacentHTML('afterbegin', markup);
+  });
+
+  e.target.reset();
+}
+function handleUpdateCar(e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  // const data = Object.fromEntries(formData.entries()); // Можна зібрати так дані з форми, але так не назви будуть з форми нейм, тому:
+
+  const id = e.target.elements.carId.value;
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+    if (!value.trim()) continue; // Для того щоб не змінювати ті поля які я не планую оновлювати, тобто якщо value порожнє перейди до наступного поля;
+    const newKey = key.slice(3).toLowerCase();
+    data[newKey] = value;
+  }
+
+  updateCar(id, data)
+    .then(newCar => {
+      const markup = carTemplate(newCar);
+      const oldCar = document.querySelector(`[data-id='${id}']`); // знаходжу старий авто по id;
+      console.log(oldCar);
+      oldCar.insertAdjacentHTML('beforebegin', markup); //вставляю біля старого авто новий
+
+      oldCar.remove(); // А старе авто видаляю
+    })
+    .catch(error => {
+      iziToast.error({
+        title: 'Sorry',
+        message: `${error}`,
+      });
+    });
+
+  e.target.reset();
+}
+function handleResetCar(e) {
+  e.preventDefault();
+
+  const id = e.target.elements.carId.value;
+  const data = {
+    model: e.target.elements.carModel.value,
+    year: e.target.elements.carYear.value,
+    owner: e.target.elements.carOwner.value,
+  }; // Ще один метод отримати дані з полів але він зручний коли в мене не багато полів
+
+  resetCar(id, data)
+    .then(newCar => {
+      const markup = carTemplate(newCar);
+      const oldCar = document.querySelector(`[data-id='${id}']`); // знаходжу старий авто по id;
+      console.log(oldCar);
+      oldCar.insertAdjacentHTML('beforebegin', markup); //вставляю біля старого авто новий
+
+      oldCar.remove(); // А старе авто видаляю
+    })
+    .catch(error => {
+      iziToast.error({
+        title: 'Sorry',
+        message: `${error}`,
+      });
+    });
+
+  e.target.reset();
+}
+
+function handleRemoveCar(e) {
+  e.preventDefault();
+
+  e.target.reset();
+}
 
 getAllCars().then(data => {
   const markup = carsTemplate(data);
@@ -10,10 +106,12 @@ getAllCars().then(data => {
 });
 
 function carTemplate(car) {
-  const { model, year } = car;
-  return `<li>
+  const { model, year, owner, id } = car;
+  return `<li data-id='${id}'>
+        <p>id: ${id}</p>
         <p>Model: ${model}</p>
         <p>Year: ${year}</p>
+        <p>Owner: ${owner}</p>
       </li>`;
 }
 

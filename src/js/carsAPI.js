@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// const randomId = Math.round(Math.random() * 100);
+// console.log(randomId);
+
 // Приклад
 // const instance = axios.create({
 //   baseURL: 'http://localhost:3000',

@@ -10,8 +10,59 @@
   <body>
     <h1>Database</h1>
     <h2>Cars</h2>
-    <ul class="cars-list">
+    <div class="header horizont-box">
+      <form class="card form-inline search-form js-create-form">
+        <div class="form-group">
+          Model: <input type="text" name="carModel" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="carYear" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="carOwner" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Car</button>
+      </form>
+
+       <form class="card form-inline search-form js-reset-form">
+        <div class="form-group">Id: <input type="text" name="carId" /></div>
+        <div class="form-group">
+          Model: <input type="text" name="carModel" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="carYear" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="carOwner" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Reset Car</button>
+      </form>
+
+      <form class="card form-inline search-form js-update-form">
+        <div class="form-group">Id: <input type="text" name="carId" /></div>
+        <div class="form-group">
+          Model: <input type="text" name="bookTitle" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="bookAuthor" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="bookDesc" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Car</button>
+      </form>
+
+      <form class="card form-inline search-form js-delete-form">
+        <div class="form-group">Id: <input type="text" name="bookId" /></div>
+
+        <button type="submit" class="btn btn-primary">Delete Car</button>
+      </form>
+    <ul class="cars-list" data-id=${id}>
       <li>
+
         <p>Model: ${model}</p>
         <p>Year: ${year}</p>
       </li>
