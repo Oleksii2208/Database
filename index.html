@@ -6,14 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Database</title>
     <script type="module" crossorigin src="/Database/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/Database/assets/vendor-C1iOyG3K.js">
+    <link rel="modulepreload" crossorigin href="/Database/assets/vendor-B3vRroJ0.js">
+    <link rel="stylesheet" crossorigin href="/Database/assets/vendor-DnveWo0P.css">
     <link rel="stylesheet" crossorigin href="/Database/assets/index-DvPDDfy5.css">
   </head>
   <body>
     <h1>Database</h1>
     <h2>Cars</h2>
-    <ul class="cars-list">
+    <div class="header horizont-box">
+      <form class="card form-inline search-form js-create-form">
+        <div class="form-group">
+          Model: <input type="text" name="carModel" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="carYear" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="carOwner" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Car</button>
+      </form>
+
+       <form class="card form-inline search-form js-reset-form">
+        <div class="form-group">Id: <input type="text" name="carId" /></div>
+        <div class="form-group">
+          Model: <input type="text" name="carModel" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="carYear" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="carOwner" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Reset Car</button>
+      </form>
+
+      <form class="card form-inline search-form js-update-form">
+        <div class="form-group">Id: <input type="text" name="carId" /></div>
+        <div class="form-group">
+          Model: <input type="text" name="bookTitle" />
+        </div>
+        <div class="form-group">
+          Year: <input type="text" name="bookAuthor" />
+        </div>
+        <div class="form-group">
+          Owner: <input type="text" name="bookDesc" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Car</button>
+      </form>
+
+      <form class="card form-inline search-form js-delete-form">
+        <div class="form-group">Id: <input type="text" name="bookId" /></div>
+
+        <button type="submit" class="btn btn-primary">Delete Car</button>
+      </form>
+    <ul class="cars-list" data-id=${id}>
       <li>
+
         <p>Model: ${model}</p>
         <p>Year: ${year}</p>
       </li>
